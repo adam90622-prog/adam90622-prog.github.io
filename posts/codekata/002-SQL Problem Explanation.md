@@ -1,5 +1,7 @@
 # SQL Problem Explanation
 
+## ## Places Owned by Heavy Users
+
 The **PLACES** table contains information about spaces registered on a space-rental service.  
 The table structure is:
 
