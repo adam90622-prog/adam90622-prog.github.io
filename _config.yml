@@ -1,0 +1,12 @@
+collections:
+  codekata:
+    output: true
+    permalink: /codekata/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: codekata
+    values:
+      layout: post
+      category: Code Kata
