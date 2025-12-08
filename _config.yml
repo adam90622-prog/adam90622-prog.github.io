@@ -2,6 +2,9 @@ collections:
   codekata:
     output: true
     permalink: /codekata/:name/
+  analysis:
+    output: true
+    permalink: /analysis/:name/
 
 defaults:
   - scope:
