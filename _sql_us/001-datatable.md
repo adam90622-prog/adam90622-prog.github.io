@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "SQL Study 001 – DB & Table Setup (EN)"
 date: 2025-12-09
 order: 1
