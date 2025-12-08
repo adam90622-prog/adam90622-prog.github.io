@@ -18,7 +18,7 @@ title: SQL Study
 
   ### 🇺🇸 SQL Study (EN)
   <ul>
-    {% assign items_en = site.sql_en | sort: "order" %}
+    {% assign items_en = site.sql_us | sort: "order" %}
     {% for item in items_en %}
       <li><a href="{{ item.url }}">{{ item.title }}</a></li>
     {% endfor %}
