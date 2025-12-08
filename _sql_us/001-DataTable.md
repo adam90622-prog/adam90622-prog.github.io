@@ -1,7 +1,16 @@
+---
+layout: post
+title: "SQL Study 001 – DB & Table Setup (EN)"
+date: 2025-12-09
+order: 1
+---
 
+```markdown
+# 001. Part 1 — DB & Table Setup (EN)
+```
 
 ## 1. Create Database
-
+```sql
 -- 1-1. Drop the database if it already exists
 --      (reset so we can recreate it with the same name)
 DROP DATABASE IF EXISTS learn_sql;
@@ -13,10 +22,10 @@ CREATE DATABASE learn_sql
 
 -- 1-3. Use learn_sql as the default database for all queries
 USE learn_sql;
-
+```
 
 ## 2. Create staff Table
-
+```sql
 -- 2-1. Drop staff table if it already exists
 DROP TABLE IF EXISTS staff;
 
@@ -33,10 +42,10 @@ CREATE TABLE staff (
   team_id      INT,               -- team id
   is_active    BOOLEAN            -- employment status (TRUE: active, FALSE: left)
 );
-
+```
 
 ## 3. Create team Table
-
+```sql
 -- 3-1. Drop team table if it already exists
 --      (avoid errors and reset data when we re-run the script)
 DROP TABLE IF EXISTS team;
@@ -47,10 +56,10 @@ CREATE TABLE team (
   team_name  VARCHAR(100),      -- team name
   office     VARCHAR(100)       -- office location
 );
-
+```
 
 ## 4. Insert Data into staff
-
+```sql
 -- 4-1. Remove any existing rows in staff (reset)
 DELETE FROM staff;
 
@@ -72,10 +81,10 @@ VALUES
 (7009, '오지훈',  'Oh Staff',           'Junior',     7002,  '2022-01-03',  4850,  900,  11,   TRUE),
 (7010, '류서연',  'Ryu Staff',          'Junior',     7003,  '2022-03-02',  4520,  900,  12,   TRUE),
 (8001, '문건우',  'Moon FieldLeader',   'FieldLead',  NULL,  '2015-04-03',  6050, 1900,  40,   TRUE);
-
+```
 
 ## 5. Insert Data into team
-
+```sql
 -- 5-1. Remove existing rows in team (reset)
 DELETE FROM team;
 
@@ -86,12 +95,13 @@ INSERT INTO team (team_id, team_name, office) VALUES
   (12, 'Domestic Sales 2', 'Seoul'),
   (40, 'Production Center','Asan'),
   (80, 'HR Operations',    'Seoul');
-
+```
 
 ## 6. Test Queries
-
+```sql
 -- 6-1. Check staff data
 SELECT * FROM learn_sql.staff;
 
 -- 6-2. Check team data
 SELECT * FROM learn_sql.team;
+```
