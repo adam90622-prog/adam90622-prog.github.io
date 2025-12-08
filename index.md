@@ -13,4 +13,4 @@
 
 ### 🔹 Data Analysis
 
-- [Code Kata](/categories/codekata)
+- [Code Kata](/codekata)
