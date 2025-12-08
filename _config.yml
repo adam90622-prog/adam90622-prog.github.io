@@ -5,6 +5,15 @@ collections:
   analysis:
     output: true
     permalink: /analysis/:name/
+  sql_kr:
+    output: true
+    permalink: /sql-study/kr/:name/
+  sql_en:
+    output: true
+    permalink: /sql-study/en/:name/
+  sql_cn:
+    output: true
+    permalink: /sql-study/cn/:name/
 
 defaults:
   - scope:
