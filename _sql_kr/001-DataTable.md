@@ -1,9 +1,17 @@
+---
+layout: post
+title: "SQL Study 001 – DB & Table Setup (KR)"
+date: 2025-12-09
+order: 1
+---
 
+```markdown
+# 001. Part 1 — DB & Table Setup (KR)
+```
 
 ## 1. 데이터베이스 만들기
-
+```sql
 -- 1-1. 기존에 learn_sql 데이터베이스가 존재하면 삭제
---     (동일한 이름으로 다시 생성하기 위해 초기화하는 과정)
 DROP DATABASE IF EXISTS learn_sql;
 
 -- 1-2. learn_sql 이라는 이름의 새로운 데이터베이스 생성
@@ -13,10 +21,10 @@ CREATE DATABASE learn_sql
 
 -- 1-3. 앞으로 실행되는 모든 쿼리를 learn_sql 데이터베이스 기준으로 수행
 USE learn_sql;
-
+```
 
 ## 2. staff 테이블 만들기 (사원/직원 정보)
-
+```sql
 -- 2-1. staff 테이블이 이미 존재하면 먼저 삭제
 DROP TABLE IF EXISTS staff;
 
@@ -33,10 +41,10 @@ CREATE TABLE staff (
   team_id      INT,               -- 소속 팀 번호
   is_active    BOOLEAN            -- 재직 여부(TRUE: 재직, FALSE: 퇴사)
 );
-
+```
 
 ## 3. team 테이블 만들기 (부서/팀 정보)
-
+```sql
 -- 3-1. team 테이블이 이미 존재하면 먼저 삭제
 --     (재실행 시 오류 방지 및 초기화 목적)
 DROP TABLE IF EXISTS team;
@@ -47,10 +55,10 @@ CREATE TABLE team (
   team_name  VARCHAR(100),      -- 팀 이름
   office     VARCHAR(100)       -- 근무 지역/사무실 위치
 );
-
+```
 
 ## 4. staff 테이블 데이터 적재
-
+```sql
 -- 4-1. staff 테이블에 기존 데이터가 있으면 모두 삭제(초기화)
 DELETE FROM staff;
 
@@ -72,10 +80,10 @@ VALUES
 (7009, '오지훈',  'Oh Staff',           '사원',       7002,  '2022-01-03',  4850,  900,  11,   TRUE),
 (7010, '류서연',  'Ryu Staff',          '사원',       7003,  '2022-03-02',  4520,  900,  12,   TRUE),
 (8001, '문건우',  'Moon FieldLeader',   '현장반장',   NULL,  '2015-04-03',  6050, 1900,  40,   TRUE);
-
+```
 
 ## 5. team 테이블 데이터 적재
-
+```sql
 -- 5-1. team 테이블에 기존 데이터가 있으면 모두 삭제(초기화)
 DELETE FROM team;
 
@@ -86,12 +94,13 @@ INSERT INTO team (team_id, team_name, office) VALUES
   (12, '국내영업2팀',   '서울'),
   (40, '생산센터',       '아산'),
   (80, '인사운영팀',     '서울');
-
+```
 
 ## 6. 데이터 적재 확인용 조회
-
+```sql
 -- 6-1. 직원 데이터가 잘 들어갔는지 확인
 SELECT * FROM learn_sql.staff;
 
 -- 6-2. 팀 데이터가 잘 들어갔는지 확인
 SELECT * FROM learn_sql.team;
+```
