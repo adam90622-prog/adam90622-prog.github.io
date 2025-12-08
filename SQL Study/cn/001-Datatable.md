@@ -2,25 +2,25 @@
 
 ## 1. 创建数据库
 
--- 1-1. 如果已经存在 learn_sql 数据库，则先删除
---      （为了重新创建同名数据库，先做初始化）
+###### -- 1-1. 如果已经存在 learn_sql 数据库，则先删除
+###### --      （为了重新创建同名数据库，先做初始化）
 DROP DATABASE IF EXISTS learn_sql;
 
--- 1-2. 创建名为 learn_sql 的新数据库
+###### -- 1-2. 创建名为 learn_sql 的新数据库
 CREATE DATABASE learn_sql
   DEFAULT CHARACTER SET utf8mb4
   COLLATE utf8mb4_general_ci;
 
--- 1-3. 之后执行的所有 SQL 都以 learn_sql 数据库为默认
+###### -- 1-3. 之后执行的所有 SQL 都以 learn_sql 数据库为默认
 USE learn_sql;
 
 
 ## 2. 创建 staff 表（员工信息）
 
--- 2-1. 如果 staff 表已经存在，先删除
+###### -- 2-1. 如果 staff 表已经存在，先删除
 DROP TABLE IF EXISTS staff;
 
--- 2-2. 创建 staff 表，用于保存员工信息
+###### -- 2-2. 创建 staff 表，用于保存员工信息
 CREATE TABLE staff (
   staff_id     INT PRIMARY KEY,   -- 员工编号
   name_ko      VARCHAR(50),       -- 本地姓名（韩文）
@@ -37,11 +37,11 @@ CREATE TABLE staff (
 
 ## 3. 创建 team 表（部门/团队信息）
 
--- 3-1. 如果 team 表已经存在，先删除
---      （防止重复执行脚本时报错，并清空旧数据）
+###### -- 3-1. 如果 team 表已经存在，先删除
+###### --      （防止重复执行脚本时报错，并清空旧数据）
 DROP TABLE IF EXISTS team;
 
--- 3-2. 创建 team 表，用于保存部门/团队信息
+###### -- 3-2. 创建 team 表，用于保存部门/团队信息
 CREATE TABLE team (
   team_id    INT PRIMARY KEY,   -- 团队编号
   team_name  VARCHAR(100),      -- 团队名称
@@ -51,10 +51,10 @@ CREATE TABLE team (
 
 ## 4. 向 staff 表插入数据
 
--- 4-1. 先清空 staff 表中的旧数据
+###### -- 4-1. 先清空 staff 表中的旧数据
 DELETE FROM staff;
 
--- 4-2. 插入新的员工数据
+###### -- 4-2. 插入新的员工数据
 INSERT INTO staff
 (staff_id, name_ko, name_en, position, manager_id, hired_at, salary, bonus, team_id, is_active)
 VALUES
@@ -76,10 +76,10 @@ VALUES
 
 ## 5. 向 team 表插入数据
 
--- 5-1. 清空 team 表中的旧数据
+###### -- 5-1. 清空 team 表中的旧数据
 DELETE FROM team;
 
--- 5-2. 插入新的团队数据
+###### -- 5-2. 插入新的团队数据
 INSERT INTO team (team_id, team_name, office) VALUES
   (10, '业务本部',      '首尔'),
   (11, '国内营业一组', '首尔'),
@@ -90,8 +90,8 @@ INSERT INTO team (team_id, team_name, office) VALUES
 
 ## 6. 查询确认数据
 
--- 6-1. 查看 staff 表数据
+###### -- 6-1. 查看 staff 表数据
 SELECT * FROM learn_sql.staff;
 
--- 6-2. 查看 team 表数据
+###### -- 6-2. 查看 team 表数据
 SELECT * FROM learn_sql.team;
