@@ -5,9 +5,8 @@ date: 2025-12-09
 order: 1
 ---
 
-```markdown
 # 001. Part 1 — DB & Table Setup (KR)
-```
+
 
 ## 1. 데이터베이스 만들기
 ```sql
