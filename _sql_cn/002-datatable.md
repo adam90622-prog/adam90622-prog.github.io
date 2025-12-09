@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "SQL Study 001 – DB & Table Setup (CN)"
+title: "SQL Study 002 – DB & Table Setup (CN)"
 date: 2025-12-09
 order: 1
 ---
