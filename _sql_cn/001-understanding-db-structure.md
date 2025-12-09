@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: defalut
 title: "SQL Study 001 – 数据库结构理解 (CN)"
 date: 2025-12-12
 order: 1
