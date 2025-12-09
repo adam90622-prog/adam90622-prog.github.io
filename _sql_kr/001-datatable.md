@@ -7,7 +7,6 @@ order: 1
 
 # 001. Part 1 — DB & Table Setup (KR)
 
-
 ## 1. 데이터베이스 만들기
 ```sql
 -- 1-1. 기존에 learn_sql 데이터베이스가 존재하면 삭제
