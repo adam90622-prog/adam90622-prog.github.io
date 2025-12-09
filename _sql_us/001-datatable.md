@@ -5,9 +5,7 @@ date: 2025-12-09
 order: 1
 ---
 
-```markdown
 # 001. Part 1 — DB & Table Setup (EN)
-```
 
 ## 1. Create Database
 ```sql
