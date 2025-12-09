@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "SQL Study 001 – 데이터베이스 구조 이해 (KR)"
 date: 2025-12-12
 order: 1
