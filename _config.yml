@@ -22,3 +22,21 @@ defaults:
     values:
       layout: post
       category: Code Kata
+
+  - scope:
+      path: ""
+      type: sql_kr
+    values:
+      layout: default
+
+  - scope:
+      path: ""
+      type: sql_us
+    values:
+      layout: default
+
+  - scope:
+      path: ""
+      type: sql_cn
+    values:
+      layout: default
