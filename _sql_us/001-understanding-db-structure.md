@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "SQL Study 001 – Understanding Database Structure (EN)"
 date: 2025-12-12
 order: 1
