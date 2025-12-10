@@ -53,3 +53,13 @@ title: SQL Study
   </ul>
 
 </details>
+
+---
+
+## Debug – sql_us list
+
+<ul>
+  {% for item in site.sql_us %}
+    <li>{{ item.url }} — {{ item.title }}</li>
+  {% endfor %}
+</ul>
