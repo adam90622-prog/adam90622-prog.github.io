@@ -38,7 +38,7 @@ SELECT 구문은 데이터베이스의 데이터를 조회하기 위한 가장 �
 SELECT * FROM staff;
 
 -- 특정 컬럼 조회 (별칭 사용)
-SELECT name_ko AS 이름, position AS 직급
+SELECT name_ko AS '이름', position AS '직급'
 FROM staff;
 ```
 
