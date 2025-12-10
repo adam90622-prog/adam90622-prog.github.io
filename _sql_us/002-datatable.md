@@ -2,7 +2,7 @@
 layout: default
 title: "SQL Study 002 – DB & Table Setup (EN)"
 date: 2025-12-09
-order: 1
+order: 2
 ---
 
 # 001. Part 1 — DB & Table Setup (EN)
