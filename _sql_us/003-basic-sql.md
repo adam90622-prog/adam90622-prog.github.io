@@ -63,11 +63,10 @@ Retrieve all rows from the staff table.
 
 <details> 
 <summary>Answer</summary>
-
 ```sql
 SELECT * FROM staff;
-</details>
 ```
+</details>
 
 ### Problem 2:
 Retrieve staff ID, Korean name, and position as shown below:
@@ -89,23 +88,25 @@ Retrieve staff ID, Korean name, and position as shown below:
 | 7010     | 류서연       | Junior    |
 | 8001     | 문건우       | FieldLead |
 
-<details> <summary>Answer</summary>
-
+<details> 
+<summary>Answer</summary>
 ```sql
 SELECT  staff_id AS 'Staff ID'
        ,name_ko  AS 'Name (KR)'
        ,position AS 'Position'
 FROM staff;
-</details>
 ```
+</details>
+
 
 ### Problem 3:
 Retrieve the list of unique positions from the staff table.
 
-<details> <summary>Answer</summary>
-
+<details> 
+<summary>Answer</summary>
 ```sql
 SELECT DISTINCT position
 FROM staff;
-</details>
 ```
+</details>
+
