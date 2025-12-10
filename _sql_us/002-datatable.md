@@ -5,7 +5,7 @@ date: 2025-12-09
 order: 2
 ---
 
-# SQL Study 001 — DB & Table Setup (EN)
+# SQL Study 002 — DB & Table Setup (EN)
 
 ## 1. Create Database
 ```sql
