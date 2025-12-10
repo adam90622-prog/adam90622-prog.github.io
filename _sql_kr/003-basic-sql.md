@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "SQL Study 003 – Basic SQL (KR)"
-date: 2025-12-12
+date: 2025-12-10
 order: 3
 ---
 
