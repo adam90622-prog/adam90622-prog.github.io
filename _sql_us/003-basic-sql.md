@@ -66,7 +66,8 @@ Retrieve all rows from the staff table.
 
 ```sql
 SELECT * FROM staff;
-</details>```
+</details>
+```
 
 ### Problem 2:
 Retrieve staff ID, Korean name, and position as shown below:
@@ -95,7 +96,8 @@ SELECT  staff_id AS 'Staff ID'
        ,name_ko  AS 'Name (KR)'
        ,position AS 'Position'
 FROM staff;
-</details>```
+</details>
+```
 
 ### Problem 3:
 Retrieve the list of unique positions from the staff table.
@@ -105,4 +107,5 @@ Retrieve the list of unique positions from the staff table.
 ```sql
 SELECT DISTINCT position
 FROM staff;
-</details>```
+</details>
+```
