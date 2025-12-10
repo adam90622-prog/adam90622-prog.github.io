@@ -63,12 +63,13 @@ FROM staff;
 ### 练习 1:
 查询 staff 表的所有数据。
 
-<details> <summary>答案</summary>
+<details markdown="1">
+<summary>答案</summary>
 
 ```sql
 SELECT * FROM staff;
-</details>
 ```
+</details>
 
 ### 练习 2:
 查询编号、韩文姓名、职级，结果如下：
@@ -90,23 +91,25 @@ SELECT * FROM staff;
 | 7010 | 류서연 | Junior    |
 | 8001 | 文建宇 | FieldLead |
 
-<details> <summary>答案</summary>
+<details markdown="1">
+<summary>答案</summary>
 
 ```sql
 SELECT  staff_id AS '编号'
        ,name_ko  AS '姓名'
        ,position AS '职级'
 FROM staff;
-</details>
 ```
+</details>
 
 ### 练习 3:
 查询 staff 表中的唯一职级列表。
 
-<details> <summary>答案</summary>
+<details markdown="1">
+<summary>答案</summary>
 
 ```sql
 SELECT DISTINCT position
 FROM staff;
+```
 </details>
-``` 
