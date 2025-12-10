@@ -70,8 +70,7 @@ staff 테이블을 전체 조회하시오.
 <summary>정답</summary>
 ```sql
 SELECT * FROM staff;
-```
-<details>
+</details>
 
 ###### 문제 2:
 아래 출력 형식을 만족하도록 staff 테이블에서 사번, 이름(한글), 직급을 조회하시오.
@@ -100,8 +99,7 @@ SELECT  staff_id AS `사번`
        ,name_ko  AS `이름`
        ,position AS `직급`
 FROM staff;
-```
-<details>
+</details>
 
 ###### 문제3:
 staff 테이블에서 중복 없이 직급 목록을 출력하시오.
@@ -111,5 +109,4 @@ staff 테이블에서 중복 없이 직급 목록을 출력하시오.
 ```sql
 SELECT DISTINCT position
 FROM staff;
-```
-<details>
+</details>
