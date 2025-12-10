@@ -14,7 +14,8 @@ order: 1
 
 # 1. 인스턴스 → 데이터베이스 → 테이블
 
-<!-- IMAGE_1_HERE -->
+<img width="2000" height="1400" alt="2" src="https://github.com/user-attachments/assets/8524fbbf-b882-4ec8-aaf7-5cfe5b7b56c5" />
+
 
 ## 1-1. 인스턴스(Instance)
 
