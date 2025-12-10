@@ -34,7 +34,7 @@ SELECT 是用来查询数据的最基本 SQL 语句。
 SELECT * FROM staff;
 
 -- 查询指定字段（带别名）
-SELECT name_ko AS 姓名, position AS 职级
+SELECT name_ko AS '姓名', position AS '职级'
 FROM staff;
 ```
 
@@ -92,9 +92,9 @@ SELECT * FROM staff;
 <details> <summary>答案</summary>
 
 ```sql
-SELECT  staff_id AS `编号`
-       ,name_ko  AS `姓名`
-       ,position AS `职级`
+SELECT  staff_id AS '编号'
+       ,name_ko  AS '姓名'
+       ,position AS '职级'
 FROM staff;
 ```
 </details>
