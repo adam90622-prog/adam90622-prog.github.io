@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "SQL Study 003 – Basic SQL (KR)"
 date: 2025-12-12
 order: 3
