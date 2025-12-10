@@ -74,7 +74,7 @@ SELECT * FROM staff;
 Retrieve staff ID, Korean name, and position as shown below:
 
 | Staff ID | Name (KR) | Position  |
-| -------- | --------- | --------- |
+| ---- | --- | --------- |
 | 1000     | 윤사령       | CEO       |
 | 7001     | 백항해       | Executive |
 | 7002     | 김운항       | Manager   |
