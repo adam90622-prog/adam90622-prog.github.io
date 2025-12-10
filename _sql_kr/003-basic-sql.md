@@ -68,6 +68,7 @@ staff 테이블을 전체 조회하시오.
 
 <details>
 <summary>정답</summary>
+       
 ```sql
 SELECT * FROM staff;
 </details>
@@ -94,6 +95,7 @@ SELECT * FROM staff;
 
 <details>
 <summary>정답</summary>
+
 ```sql
 SELECT  staff_id AS `사번`
        ,name_ko  AS `이름`
@@ -106,6 +108,7 @@ staff 테이블에서 중복 없이 직급 목록을 출력하시오.
 
 <details>
 <summary>정답</summary>
+
 ```sql
 SELECT DISTINCT position
 FROM staff;
