@@ -76,7 +76,8 @@ staff_id name_ko position team_id is_active
 
 # 2. ERD (엔터티 관계도)
 
-<!-- IMAGE_2_HERE -->
+<img width="2000" height="1400" alt="Staff (2)" src="https://github.com/user-attachments/assets/01567546-0442-47e8-be6d-dca6bb25160f" />
+
 
 우리가 SQL 실습에서 사용할 테이블 구조(ERD)는 아래와 같습니다.
 
