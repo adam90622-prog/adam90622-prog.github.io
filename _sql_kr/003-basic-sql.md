@@ -98,9 +98,9 @@ SELECT * FROM staff;
 <summary>정답</summary>
 
 ```sql
-SELECT  staff_id AS `사번`
-       ,name_ko  AS `이름`
-       ,position AS `직급`
+SELECT  staff_id AS '사번'
+       ,name_ko  AS '이름'
+       ,position AS '직급'
 FROM staff;
 ```
 </details>
