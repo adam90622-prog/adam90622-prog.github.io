@@ -71,6 +71,7 @@ SELECT * FROM staff;
 
 ### Problem 2:
 Retrieve staff ID, Korean name, and position as shown below:
+
 | Staff ID | Name (KR) | Position  |
 | -------- | --------- | --------- |
 | 1000     | 윤사령       | CEO       |
