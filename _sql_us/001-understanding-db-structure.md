@@ -68,7 +68,8 @@ staff_id name_ko position team_id is_active
 
 # 2. ERD (Entity Relationship Diagram)
 
-<!-- IMAGE_2_HERE -->
+<img width="2000" height="1400" alt="Staff (3)" src="https://github.com/user-attachments/assets/57b64258-79ac-49bd-a90e-481e5e39fba3" />
+
 
 Describes table structure used in this SQL course.
 
