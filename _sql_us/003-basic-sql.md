@@ -34,7 +34,7 @@ SELECT is the most fundamental SQL command used to query data.
 SELECT * FROM staff;
 
 -- Select specific columns (alias)
-SELECT name_ko AS Name, position AS Position
+SELECT name_ko AS 'Name', position AS 'Position'
 FROM staff;
 ```
 
@@ -91,9 +91,9 @@ Retrieve staff ID, Korean name, and position as shown below:
 <details> <summary>Answer</summary>
 
 ```sql
-SELECT  staff_id AS `Staff ID`
-       ,name_ko  AS `Name (KR)`
-       ,position AS `Position`
+SELECT  staff_id AS 'Staff ID'
+       ,name_ko  AS 'Name (KR)'
+       ,position AS 'Position'
 FROM staff;
 ```
 </details>
