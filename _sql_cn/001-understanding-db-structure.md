@@ -14,7 +14,8 @@ order: 1
 
 # 1. 实例 → 数据库 → 表
 
-<!-- IMAGE_1_HERE -->
+<img width="2000" height="1400" alt="4" src="https://github.com/user-attachments/assets/0856a548-a9f5-4888-97ba-964ea901bae0" />
+
 
 ## 1-1. 实例(Instance)
 
