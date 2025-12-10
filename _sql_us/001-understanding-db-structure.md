@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "SQL Study 001 – Understanding Database Structure (EN)"
-date: 2025-12-12
+date: 2025-12-08
 order: 1
 ---
 
