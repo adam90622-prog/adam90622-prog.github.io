@@ -68,6 +68,7 @@ FROM staff;
 ```sql
 SELECT * FROM staff;
 ```
+
 </details>
 
 ### 练习 2:
@@ -98,6 +99,7 @@ SELECT  staff_id AS '编号'
        ,position AS '职级'
 FROM staff;
 ```
+
 </details>
 
 ### 练习 3:
@@ -109,4 +111,5 @@ FROM staff;
 SELECT DISTINCT position
 FROM staff;
 ```
+
 </details> 
