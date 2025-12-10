@@ -2,7 +2,7 @@
 layout: post
 title: "SQL Study 002 – DB & Table Setup (KR)"
 date: 2025-12-09
-order: 1
+order: 2
 ---
 
 # 001. Part 1 — DB & Table Setup (KR)
