@@ -67,9 +67,8 @@ FROM staff;
 
 ```sql
 SELECT * FROM staff;
-```
-
 </details>
+```
 
 ### 练习 2:
 查询编号、韩文姓名、职级，结果如下：
@@ -98,9 +97,8 @@ SELECT  staff_id AS '编号'
        ,name_ko  AS '姓名'
        ,position AS '职级'
 FROM staff;
-```
-
 </details>
+```
 
 ### 练习 3:
 查询 staff 表中的唯一职级列表。
@@ -110,6 +108,5 @@ FROM staff;
 ```sql
 SELECT DISTINCT position
 FROM staff;
-```
-
-</details> 
+</details>
+``` 
