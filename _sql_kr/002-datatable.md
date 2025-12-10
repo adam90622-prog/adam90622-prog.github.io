@@ -5,7 +5,7 @@ date: 2025-12-09
 order: 2
 ---
 
-# SQL Study 003 — DB & Table Setup (KR)
+# SQL Study 002 — DB & Table Setup (KR)
 
 ## 1. 데이터베이스 만들기
 ```sql
