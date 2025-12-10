@@ -14,7 +14,8 @@ order: 1
 
 # 1. 实例 → 数据库 → 表
 
-<img width="2000" height="1400" alt="4" src="https://github.com/user-attachments/assets/0856a548-a9f5-4888-97ba-964ea901bae0" />
+<img width="2000" height="1400" alt="이미지 크기 A안  B안  C안 폰트 스타일 Sans-serif  Bold Sans-serif  Monospace 혹시 전체 배경도 흰색 유지 아니면 아주 은은한 연한 회색(#f5f5f5)" src="https://github.com/user-attachments/assets/6b3c3f4d-0d06-4e5f-bd4d-58ba787241f8" />
+
 
 
 ## 1-1. 实例(Instance)
