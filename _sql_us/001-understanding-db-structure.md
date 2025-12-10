@@ -13,7 +13,8 @@ This chapter explains how MySQL organizes and stores data, following the structu
 
 # 1. Instance → Database → Table
 
-<!-- IMAGE_1_HERE -->
+<img width="2000" height="1400" alt="3" src="https://github.com/user-attachments/assets/5619e191-3f99-44d8-95a2-374c2e9f7fab" />
+
 
 ## 1-1. Instance  
 The MySQL **instance** is the database server program currently running and occupying memory.
