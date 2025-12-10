@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "SQL Study 002 – DB & Table Setup (CN)"
 date: 2025-12-09
 order: 2
