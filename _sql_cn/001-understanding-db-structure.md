@@ -78,7 +78,8 @@ staff_id name_ko position team_id is_active
 
 # 2. ERD（实体关系图）
 
-<img width="2000" height="1400" alt="Staff (2)" src="https://github.com/user-attachments/assets/e979c654-4177-440e-85d3-13b55fadcc5a" />
+<img width="2000" height="1400" alt="Staff (3)" src="https://github.com/user-attachments/assets/eff19ace-9206-4f0f-a0d7-ac5a7d246a78" />
+
 
 
 此结构用于本 SQL 实训课程。
