@@ -71,6 +71,7 @@ staff 테이블을 전체 조회하시오.
        
 ```sql
 SELECT * FROM staff;
+```
 </details>
 
 ###### 문제 2:
@@ -101,6 +102,7 @@ SELECT  staff_id AS `사번`
        ,name_ko  AS `이름`
        ,position AS `직급`
 FROM staff;
+```
 </details>
 
 ###### 문제3:
@@ -112,4 +114,5 @@ staff 테이블에서 중복 없이 직급 목록을 출력하시오.
 ```sql
 SELECT DISTINCT position
 FROM staff;
+```
 </details>
