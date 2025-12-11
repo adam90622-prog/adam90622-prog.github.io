@@ -41,8 +41,6 @@ SQL functions are categorized as follows:
 - Conversion functions  
 - NULL-related functions  
 
-→ Return **one result per row**
-
 ## 1-2. Multi-Row Functions
 - Aggregate functions  
 - Group functions  
