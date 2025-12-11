@@ -98,9 +98,9 @@ Typical use cases: “headcount by team”, “average salary by position”, et
 ## 6. Basic GROUP BY Syntax
 
 ```sql
-SELECT 그룹기준컬럼, 집계함수(컬럼)
-FROM 테이블명
-GROUP BY 그룹기준컬럼;
+SELECT group_column, aggregate_function(column)
+FROM table_name
+GROUP BY group_column;
 ```
 
 ### 6-1. Aggregate Functions
