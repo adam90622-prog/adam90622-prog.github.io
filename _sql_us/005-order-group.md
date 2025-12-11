@@ -90,7 +90,7 @@ LIMIT 5 OFFSET 5;
 
 GROUP BY groups rows that have the same value in one or more columns.
 It is commonly used with aggregate functions like COUNT, SUM, AVG, MAX, MIN.
-<aside>
+
 Typical use cases: “headcount by team”, “average salary by position”, etc.
 
 ---
