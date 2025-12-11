@@ -104,7 +104,7 @@ Count how many employees have each name length (Korean).
 SELECT CHAR_LENGTH(name_ko) AS 'Name Length',
        COUNT(*)            AS 'Count'
 FROM staff
-GROUP BY Name Length;
+GROUP BY CHAR_LENGTH(name_ko);
 ```
 </details>
 
