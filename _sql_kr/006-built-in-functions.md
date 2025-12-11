@@ -1,4 +1,4 @@
----
+----
 layout: default
 title: "SQL Study 006 – 내장 함수 (KR)"
 date: 2025-12-10
@@ -7,8 +7,25 @@ order: 6
 
 # SQL Study 006 – 내장 함수 (KR)
 
-SQL에서 자주 사용하는 **문자열 함수, 숫자 함수, 날짜 함수, 변환형 함수, NULL 처리 함수**를 정리하고  
-각 개념을 연습 문제로 확인합니다.
+이 장에서는 `staff` 테이블을 기준으로, SQL에서 자주 사용하는 **내장 함수**들을 정리하고  
+문제 풀이를 통해 활용법을 익힙니다.
+
+사용 테이블: **staff**
+
+```sql
+CREATE TABLE staff (
+  staff_id   INT PRIMARY KEY,
+  name_ko    VARCHAR(50),
+  name_en    VARCHAR(100),
+  position   VARCHAR(50),
+  manager_id INT,
+  hired_at   DATE,
+  salary     INT,
+  bonus      INT,
+  team_id    INT,
+  is_active  BOOLEAN
+);
+```
 
 ---
 
@@ -17,17 +34,18 @@ SQL에서 자주 사용하는 **문자열 함수, 숫자 함수, 날짜 함수, 
 - 입력값을 받아 특정 연산을 수행하고 결과를 반환하는 데이터 처리 도구  
 - SQL 함수는 크게 다음과 같이 나뉜다:
 
-### 단일행 함수 (Single-Row Function)
+### 1-1. 단일행 함수 (Single-Row Function)
 - 문자열 함수
 - 숫자형 함수
 - 날짜형 함수
 - 변환형 함수
 - NULL 관련 함수
 
-### 다중행 함수 (Multi-Row Function)
+### 1-2. 다중행 함수 (Multi-Row Function)
 - 집계 함수 (SUM, AVG 등)
 - 그룹 함수
 - 윈도우 함수
+→ 여러 행을 모아서 **요약값(집계 결과)**을 반환
 
 ---
 
@@ -35,121 +53,117 @@ SQL에서 자주 사용하는 **문자열 함수, 숫자 함수, 날짜 함수, 
 
 ## 2-1. 주요 문자열 함수
 
-| 함수 | 의미 | 예시 |
-|------|------|------|
-| UPPER() | 대문자로 변환 | UPPER(name) |
-| LOWER() | 소문자로 변환 | LOWER(name) |
-| LENGTH() | 바이트 길이 | LENGTH(name) |
-| LEFT() | 왼쪽에서 문자 추출 | LEFT('BIGDATA', 3) |
-| RIGHT() | 오른쪽에서 문자 추출 | RIGHT('BIGDATA', 4) |
-| SUBSTRING() | 부분 문자열 추출 | SUBSTRING(name, 1, 2) |
-| REPLACE() | 문자열 치환 | REPLACE(name, '김', '이') |
-| LTRIM() | 왼쪽 문자 제거 | LTRIM('ABCD','A') |
-| RTRIM() | 오른쪽 문자 제거 | RTRIM('ABCD','A') |
-| TRIM() | 양쪽 공백 제거 | TRIM(name) |
-| CONCAT() | 문자열 결합 | CONCAT(name, deptno) |
-| LPAD() | 왼쪽 채우기 | LPAD(name, 8, '*') |
-| RPAD() | 오른쪽 채우기 | RPAD(name, 8, '*') |
-| POSITION() | 특정 문자 위치 반환 | POSITION('D' IN 'BIGDATA') |
+| 함수            | 의미                | 예시                              |
+| ------------- | ----------------- | ------------------------------- |
+| UPPER()       | 대문자로 변환           | `UPPER(name_en)`                |
+| LOWER()       | 소문자로 변환           | `LOWER(name_en)`                |
+| LENGTH()      | 바이트 길이            | `LENGTH(name_ko)`               |
+| CHAR_LENGTH() | 문자 길이(한글 글자 수)    | `CHAR_LENGTH(name_ko)`          |
+| LEFT()        | 왼쪽에서 N글자 잘라내기     | `LEFT('BIGDATA', 3)`            |
+| RIGHT()       | 오른쪽에서 N글자 잘라내기    | `RIGHT('BIGDATA', 4)`           |
+| SUBSTRING()   | 부분 문자열 추출         | `SUBSTRING(name_ko, 2, 2)`      |
+| REPLACE()     | 문자열 치환            | `REPLACE(position, '부장', '이사')` |
+| LTRIM()       | 왼쪽에서 특정 문자/공백 제거  | `LTRIM(' ABC', ' ')`            |
+| RTRIM()       | 오른쪽에서 특정 문자/공백 제거 | `RTRIM('ABC ', ' ')`            |
+| TRIM()        | 양쪽 공백 제거          | `TRIM(name_en)`                 |
+| CONCAT()      | 문자열 연결            | `CONCAT(name_ko, '님')`          |
+| LPAD()        | 왼쪽을 채워 길이 맞추기     | `LPAD(name_ko, 5, '*')`         |
+| RPAD()        | 오른쪽을 채워 길이 맞추기    | `RPAD(name_ko, 5, '*')`         |
+| POSITION()    | 부분 문자열 위치 (없으면 0) | `POSITION('D' IN 'BIGDATA')`    |
 
-> 한글 길이는 반드시 **CHAR_LENGTH()** 사용
+→ 한글 이름 글자 수는 LENGTH()가 아니라 CHAR_LENGTH() 사용
 
 ---
 
 ## 2-2. 문제
 
 ### 문제 1:
-아래와 같은 형태로 출력하시오.
+staff 테이블에서 아래와 같은 형식으로 출력하시오.
 
-| 이름 [직급] |
-|-------------|
-| 김대표 [CEO] |
-| 최재혁 [부장] |
-| … |
+예) 윤사령 [대표이사]
 
 <details markdown="1">
 <summary>정답</summary>
 
 ```sql
-SELECT CONCAT(ename_ko, ' [', joblv, ']') AS '이름 [직급]'
-FROM emp;
+SELECT CONCAT(name_ko, ' [', position, ']') AS '이름 [직급]'
+FROM staff;
 ```
 </details>
 
 ## 문제 2:
-이름 글자수별 인원수를 출력하시오.
-
-예시:
-| 이름길이 | 카운트 |
-| ---- | --- |
-| 3    | 13  |
-| 4    | 1   |
+staff 테이블에서 이름 글자 수별 인원 수를 구하시오.
+(이름 글자 수는 한글 기준, CHAR_LENGTH(name_ko) 사용)
 
 <details markdown="1"> 
 <summary>정답</summary>
 
 ```sql
-SELECT CHAR_LENGTH(ename_ko) AS '이름길이',
-       COUNT(*) AS '카운트'
-FROM emp
+SELECT CHAR_LENGTH(name_ko) AS '이름길이',
+       COUNT(*)             AS '카운트'
+FROM staff
 GROUP BY 이름길이;
 ```
 </details>
 
 ## 문제 3:
-이름의 마지막 글자가 ‘수’로 끝나는 직원의 정보를 아래와 같이 출력하시오.
-(영문명은 대문자로 출력)
+이름의 **마지막 글자가 ‘현’**으로 끝나는 직원을 조회하고,
+아래와 같이 출력하시오. (영문 이름은 대문자로 출력)
 
 예시:
-| 이름   | 영문명           |
-| ---- | ------------- |
-| 남궁민수 | NAMGUNG MINSU |
-| 김낙수  | KIM NAKSU     |
+| 이름  | 영문명         |
+| --- | ----------- |
+| 송도현 | SONG DOHYUN |
 
 <details markdown="1"> 
 <summary>정답</summary>
 
 ```sql
-SELECT ename_ko AS '이름',
-       UPPER(ename_en) AS '영문명'
-FROM emp
-WHERE RIGHT(ename_ko, 1) = '수';
+SELECT name_ko        AS '이름',
+       UPPER(name_en) AS '영문명'
+FROM staff
+WHERE RIGHT(name_ko, 1) = '현';
 ```
 </details>
 
 ## 문제 4:
-이름이 김낙수인 사원의 직급을 REPLACE 함수로 ‘부장 → 상무’로 변경하여 출력하시오.
+이름이 **'김운항'**인 직원에 대해,
+현재 직급이 '부장'일 때 이를 '상무'로 바꾼 승진 직급을 함께 출력하시오.
 
 <details markdown="1"> 
 <summary>정답</summary>
 
 ```sql
-SELECT ename_ko AS '이름',
-       joblv AS '현 직급',
-       REPLACE(joblv, '부장', '상무') AS '승진 직급'
-FROM emp
-WHERE ename_ko = '김낙수';
+SELECT name_ko                        AS '이름',
+       position                       AS '현 직급',
+       REPLACE(position, '부장', '상무') AS '승진 직급'
+FROM staff
+WHERE name_ko = '김운항';
 ```
 </details>
 
 ## 문제 5:
-이름을 익명 처리하여 출력하시오.
-(성을 제외한 모든 글자는 ** 처리)
+이름을 익명 처리해서 성과 정보를 전달하려고 합니다.
+성을 제외한 이름 부분은 모두 **로 처리하여 아래와 같이 출력하세요.
 
 예시:
 
-| 직급 | 이름 | 연봉 | 성과금 |
-| -- | -- | -- | --- |
+| 직급   | 이름  | 연봉    | 성과급  |
+| ---- | --- | ----- | ---- |
+| 대표이사 | 윤** | 82000 | 0    |
+| 전무   | 백** | 23000 | 9000 |
+| …    | …   | …     | …    |
+
 
 <details markdown="1"> 
 <summary>정답</summary>
 
 ```sql
-SELECT joblv AS '직급',
-       CONCAT(LEFT(ename_ko,1),'**') AS '이름',
-       sal AS '연봉',
-       comm AS '성과금'
-FROM emp;
+SELECT position                         AS '직급',
+       CONCAT(LEFT(name_ko, 1), '**')   AS '이름',
+       salary                           AS '연봉',
+       bonus                            AS '성과급'
+FROM staff;
 ```
 </details>
 
@@ -159,18 +173,18 @@ FROM emp;
 
 ## 3-1. 주요 숫자 함수
 
-| 함수         | 의미         | 예시                  |
-| ---------- | ---------- | ------------------- |
-| TRUNCATE() | 버림(내림)     | TRUNCATE(3.14159,3) |
-| ROUND()    | 반올림        | ROUND(3.6)          |
-| MOD()      | 나머지 반환     | MOD(10,3)           |
-| CEIL()     | 올림         | CEIL(3.2)           |
-| FLOOR()    | 내림         | FLOOR(3.6)          |
-| ABS()      | 절댓값        | ABS(-10)            |
-| SIGN()     | 양수/음수/0 판별 | SIGN(-20)           |
-| SQRT()     | 제곱근        | SQRT(16)            |
-| POWER()    | 거듭제곱       | POWER(2,3)          |
-| LOG()      | 자연 로그      | LOG(10)             |
+| 함수             | 의미                   | 예시                   |
+| -------------- | -------------------- | -------------------- |
+| TRUNCATE(x, n) | 소수점 n자리까지 남기고 **버림** | TRUNCATE(3.14159, 2) |
+| ROUND(x, n)    | 소수점 n자리에서 **반올림**    | ROUND(3.14159, 2)    |
+| MOD(a, b)      | a를 b로 나눈 **나머지**     | MOD(10, 3)           |
+| CEIL(x)        | x 이상인 최소 정수(올림)      | CEIL(3.2)            |
+| FLOOR(x)       | x 이하인 최대 정수(내림)      | FLOOR(3.8)           |
+| ABS(x)         | 절댓값                  | ABS(-10)             |
+| SIGN(x)        | 부호 (-1, 0, 1)        | SIGN(-5)             |
+| POWER(a, b)    | a의 b제곱               | POWER(2, 3)          |
+| SQRT(x)        | 제곱근                  | SQRT(16)             |
+
 
 ---
 
@@ -178,27 +192,40 @@ FROM emp;
 
 ### 문제 1:
 
-급여가 6000 이상인 사원의 연봉·월급을 출력하시오.
-(월급 = 연봉/12, 소수점 0자리까지 버림, 월급 기준 내림차순)
+급여(salary)가 6000 이상인 직원에 대해,
+아래와 같이 출력하시오.
+ -이름[직급]
+ -연봉(salary)
+-월급 = 연봉 / 12 (소수점 버림, 0자리까지)
+-월급 기준 내림차순 정렬.
 
 <details markdown="1"> 
 <summary>정답</summary>
   
 ```sql
-SELECT CONCAT(ename_ko, ' [', joblv, ']') AS '이름[직급]',
-       sal AS '연봉',
-       TRUNCATE(sal/12, 0) AS '월급'
-FROM emp
-WHERE sal >= 6000
-ORDER BY 3 DESC;
+SELECT CONCAT(name_ko, ' [', position, ']') AS '이름[직급]',
+       salary                               AS '연봉',
+       TRUNCATE(salary / 12, 0)             AS '월급'
+FROM staff
+WHERE salary >= 6000
+ORDER BY 월급 DESC;
 ```
 </details>
 
 ### 문제 2:
 
-보너스 비율(= 성과금 / 연봉 × 100)을 소수점 2자리 반올림하여 출력하시오.
-(성과금 0원 제외)
+보너스 비율을 계산해 보겠습니다.
+| 보너스 비율(%) = bonus / salary × 100
 
+다음 조건에 맞게 조회하시오.
+
+성과급(bonus)이 0이 아닌 직원만
+
+보너스 비율은 소수점 둘째 자리에서 반올림
+
+예: 33.33% 형태의 문자열로 표시
+
+보너스 비율 기준 내림차순 정렬
 <details markdown="1"> 
 <summary>정답</summary>
 
