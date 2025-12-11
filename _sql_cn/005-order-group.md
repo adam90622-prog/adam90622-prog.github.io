@@ -90,7 +90,7 @@ LIMIT 5 OFFSET 5;
 
 GROUP BY 用于按某一列将多行记录分组。
 通常与 COUNT、SUM、AVG、MAX、MIN 等聚合函数一起使用。
-<aside>
+
 例如：“按团队统计人数”、“按职级统计平均薪资”等。
 
 ---
