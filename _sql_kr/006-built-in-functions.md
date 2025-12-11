@@ -102,7 +102,7 @@ staff 테이블에서 이름 글자 수별 인원 수를 구하시오.
 SELECT CHAR_LENGTH(name_ko) AS '이름길이',
        COUNT(*)             AS '카운트'
 FROM staff
-GROUP BY 이름길이;
+GROUP BY CHAR_LENGTH(name_ko);
 ```
 </details>
 
