@@ -1,7 +1,8 @@
 ---
-title: "SQL 003 – Carts with Both Milk and Yogurt"
-date: 2025-12-12
-category: SQL
+title: "SQL 001 – Average Rental Duration of Cars"
+date: 2025-12-09
+language: sql
+order: 3
 ---
 
 # SQL Problem Explanation
