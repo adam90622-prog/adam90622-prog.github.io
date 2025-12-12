@@ -3,12 +3,20 @@ layout: default
 title: Code Kata
 ---
 
-# Code Kata 목록
+# Code Kata
 
-<ul>
-  {% for item in site.codekata %}
-    <li>
-      <a href="{{ item.url }}">{{ item.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
+## Python Code Kata
+
+{% assign kata_python = site.codekata | where: "language", "python" | sort: "order" %}
+{% for item in kata_python %}
+- [{{ item.title }}]({{ item.url }})
+{% endfor %}
+
+---
+
+## SQL Code Kata
+
+{% assign kata_sql = site.codekata | where: "language", "sql" | sort: "order" %}
+{% for item in kata_sql %}
+- [{{ item.title }}]({{ item.url }})
+{% endfor %}
