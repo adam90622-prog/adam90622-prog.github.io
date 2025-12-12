@@ -1,6 +1,8 @@
 ---
 title: "SQL 001 – Average Rental Duration of Cars"
 date: 2025-01-02
+language: sql
+order: 1
 ---
 
 # SQL Problem Explanation
