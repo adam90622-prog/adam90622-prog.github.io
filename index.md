@@ -21,6 +21,8 @@ title: Adam's Data Analysis Blog
 
 ### Code Kata
 - [Code Kata 전체 보기](/codekata)
+- [Python Code Kata만 보기](/codekata-python)
+- [SQL Code Kata만 보기](/codekata-sql)
 
 ### SQL Study
 - [SQL Study 전체 보기](/SQL Study)
