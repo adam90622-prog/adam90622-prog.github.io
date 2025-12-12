@@ -1,7 +1,8 @@
 ---
-title: "SQL 002 – Places Owned by Heavy Users"
-date: 2025-01-03
-category: SQL
+title: "SQL 001 – Average Rental Duration of Cars"
+date: 2025-12-10
+language: sql
+order: 2
 ---
 
 # SQL Problem Explanation
