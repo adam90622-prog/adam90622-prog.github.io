@@ -22,8 +22,8 @@ A divisor is a number that divides `n` with no remainder.
 ---
 
 # 🔒 Constraints / 제한사항
-- 0 ≤ n ≤ 3000 :contentReference[oaicite:0]{index=0}
-
+- 0 ≤ n ≤ 3000
+- 
 ---
 
 # ✨ Examples / 예시
@@ -31,7 +31,7 @@ A divisor is a number that divides `n` with no remainder.
 | Input | Output |
 |-------|--------|
 | 12    | 28     |
-| 5     | 6      | :contentReference[oaicite:1]{index=1}
+| 5     | 6      |
 
 ---
 
@@ -78,10 +78,7 @@ def solution(n):
 
 #  🧪 Test Cases / 테스트 예시
 
-print(solution(12)) # 28
-
-print(solution(5)) # 6
-
-print(solution(1)) # 1
-
-print(solution(0)) # 0
+- print(solution(12)) # 28
+- print(solution(5)) # 6
+- print(solution(1)) # 1
+- print(solution(0)) # 0
