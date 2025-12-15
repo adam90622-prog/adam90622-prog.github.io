@@ -1,5 +1,5 @@
 ---
-title: "SQL 004 – 조회수가 가장 많은 중고거래 게시판의 첨부파일 조회하기"
+title: "SQL 004 – Attachment File Paths of the Most Viewed Post"
 date: 2025-12-12
 language: sql
 order: 4
