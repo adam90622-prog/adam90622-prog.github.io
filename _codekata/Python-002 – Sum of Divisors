@@ -1,0 +1,86 @@
+---
+title: "PY 002 – Sum of Divisors"
+date: 2025-12-15
+language: python
+order: 2
+---
+
+# Python Code Kata – PY 002: Sum of Divisors (Programmers #12928)
+
+---
+
+# 📘 Problem (EN)
+Given an integer `n`, return the sum of all divisors of `n`.
+
+A divisor is a number that divides `n` with no remainder.
+
+---
+
+# 📘 문제 설명 (KR)
+정수 `n`이 주어졌을 때, `n`의 **약수(나누어 떨어지게 하는 수)** 를 모두 더한 값을 반환하세요.
+
+---
+
+# 🔒 Constraints / 제한사항
+- 0 ≤ n ≤ 3000 :contentReference[oaicite:0]{index=0}
+
+---
+
+# ✨ Examples / 예시
+
+| Input | Output |
+|-------|--------|
+| 12    | 28     |
+| 5     | 6      | :contentReference[oaicite:1]{index=1}
+
+---
+
+# 💡 Approach (EN)
+1. Initialize `total = 0`.
+2. Check every number `i` from `1` to `n`.
+3. If `n % i == 0`, then `i` is a divisor → add it to `total`.
+4. Return `total`.
+
+---
+
+# 💡 사고 과정 (KR)
+1. 합계를 저장할 `total`을 0으로 시작한다.
+2. `1`부터 `n`까지 전부 확인한다.
+3. `n % i == 0`이면 `i`는 약수이므로 더한다.
+4. 다 더한 값을 반환한다.
+
+---
+
+# 🐍 Python Solution (EN)
+
+<details markdown="1">
+<summary>Solution (My Approach)</summary>
+
+```python
+def solution(n):
+    answer = []
+    for i in range(1, n + 1):
+        if n % i == 0:
+            answer.append(i)
+    return sum(answer)
+```
+</details> 
+
+<details markdown="1"> <summary>Solution (Most Pythonic)</summary>
+
+```sql
+def solution(n):
+    return sum(i for i in range(1, n + 1) if n % i == 0)
+```
+</details>
+
+---
+
+#  🧪 Test Cases / 테스트 예시
+
+print(solution(12)) # 28
+print(solution(5)) # 6
+print(solution(1)) # 1
+print(solution(0)) # 0
+
+::contentReference[oaicite:2]{index=2}
