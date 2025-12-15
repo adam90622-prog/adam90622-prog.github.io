@@ -1,5 +1,5 @@
 ---
-title: "SQL 001 – Average Rental Duration of Cars"
+title: "SQL 003 - Milk and yogurt in a shopping basket"
 date: 2025-12-09
 language: sql
 order: 3
