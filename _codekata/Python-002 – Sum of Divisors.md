@@ -79,6 +79,9 @@ def solution(n):
 #  🧪 Test Cases / 테스트 예시
 
 print(solution(12)) # 28
+
 print(solution(5)) # 6
+
 print(solution(1)) # 1
+
 print(solution(0)) # 0
