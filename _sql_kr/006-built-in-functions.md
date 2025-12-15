@@ -1,4 +1,4 @@
-----
+---
 layout: default
 title: "SQL Study 006 – 내장 함수 (KR)"
 date: 2025-12-11
