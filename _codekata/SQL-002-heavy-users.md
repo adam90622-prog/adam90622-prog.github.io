@@ -1,5 +1,5 @@
 ---
-title: "SQL 001 – Average Rental Duration of Cars"
+title: "SQL 002 - heavy users"
 date: 2025-12-10
 language: sql
 order: 2
